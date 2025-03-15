@@ -5,9 +5,10 @@ import json
 
 def Movie_history():
     Movie_history = "MovieList.json"
+def User_history():
+    User_history = "UserHistory.json"
 
 
-User_history = "UserHistory.json"
 # Dictionary inside a list
 movies = [
     {"Action": ["John Wick","Mad Max: Fury Road", "The Dark Knight", "Die Hard", "Gladiator"],
