@@ -3,7 +3,10 @@ import sys
 import os
 import json
 
-Movie_history = "MovieList.json"
+def Movie_history():
+    Movie_history = "MovieList.json"
+
+
 User_history = "UserHistory.json"
 # Dictionary inside a list
 movies = [
