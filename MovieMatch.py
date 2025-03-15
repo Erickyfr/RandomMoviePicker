@@ -51,10 +51,10 @@ else:
     last_movie = user_data[name]["suggested_movie"][-1]["movie"]
     print(f"Welcome back {name}!, The last movie suggested to you was: {last_movie}.")
 
-
-random_movies = random.choice(movie)
-genre, movie_list = random.choice(list(random_movies.items()))
-selected_movie = random.choice(movie_list)
+def randomMovie():
+    random_movies = random.choice(movie)
+    genre, movie_list = random.choice(list(random_movies.items()))
+    selected_movie = random.choice(movie_list)
 
 user_data[name]["suggested_movie"].append({
     "movie": selected_movie,
