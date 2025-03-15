@@ -1,0 +1,57 @@
+[
+    {
+        "Action": [
+            "John Wick",
+            "Mad Max: Fury Road",
+            "The Dark Knight",
+            "Die Hard",
+            "Gladiator",
+            "Venom",
+            "The BeeKeeper"
+        ],
+        "Comedy": [
+            "Superbad",
+            "Step Brothers",
+            "The Hangover",
+            "Dumb and Dumber",
+            "Monty Python and the Holy Grail"
+        ],
+        "Drama": [
+            "The Shawshank Redemption",
+            "Forrest Gump",
+            "Fight Club",
+            "The Godfather",
+            "Parasite",
+            "We Live in Time"
+        ],
+        "Sci-Fi": [
+            "Inception",
+            "The Matrix",
+            "Interstellar",
+            "Blade Runner 2049",
+            "Ex Machina"
+        ],
+        "Horror": [
+            "Get Out",
+            "A Nightmare on Elm Street",
+            "The Shining",
+            "Hereditary",
+            "It Follows"
+        ],
+        "Thriller": [
+            "Se7en",
+            "Gone Girl",
+            "Prisoners",
+            "Zodiac",
+            "No Country for Old Men",
+            "Blink Twice"
+        ],
+        "Animation": [
+            "Spirited Away",
+            "Toy Story",
+            "Finding Nemo",
+            "The Lion King",
+            "Inside Out"
+        ]
+    }
+]

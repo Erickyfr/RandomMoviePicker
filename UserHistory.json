@@ -1,0 +1,67 @@
+{
+    "Ericson": {
+        "suggested_movie": [
+            {
+                "movie": "Interstellar",
+                "genre": "Sci-Fi"
+            },
+            {
+                "movie": "Inside Out",
+                "genre": "Animation"
+            },
+            {
+                "movie": "Blade Runner 2049",
+                "genre": "Sci-Fi"
+            },
+            {
+                "movie": "Prisoners",
+                "genre": "Thriller"
+            },
+            {
+                "movie": "Dumb and Dumber",
+                "genre": "Comedy"
+            }
+        ],
+        "added_movie": [
+            {
+                "movie": "Blink Twice",
+                "genre": "Thriller"
+            },
+            {
+                "movie": "The Beekeeper",
+                "genre": "Action"
+            }
+        ]
+    },
+    "Ashley": {
+        "suggested_movie": [
+            {
+                "movie": "Spirited Away",
+                "genre": "Animation"
+            },
+            {
+                "movie": "The Matrix",
+                "genre": "Sci-Fi"
+            }
+        ],
+        "added_movie": []
+    },
+    "Kevin": {
+        "suggested_movie": [
+            {
+                "movie": "Dumb and Dumber",
+                "genre": "Comedy"
+            }
+        ],
+        "added_movie": []
+    },
+    "Ben": {
+        "suggested_movie": [
+            {
+                "movie": "Step Brothers",
+                "genre": "Comedy"
+            }
+        ],
+        "added_movie": []
+    }
+}
