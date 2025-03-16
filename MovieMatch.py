@@ -3,10 +3,8 @@ import sys
 import os
 import json
 
-def Movie_history(Movie_history):
-    Movie_history = "MovieList.json"
-def User_history(User_history):
-    User_history = "UserHistory.json"
+Movie_history = "MovieList.json"
+User_history = "UserHistory.json"
 
 
 # Dictionary inside a list
@@ -51,10 +49,10 @@ else:
     last_movie = user_data[name]["suggested_movie"][-1]["movie"]
     print(f"Welcome back {name}!, The last movie suggested to you was: {last_movie}.")
 
-def randomMovie():
-    random_movies = random.choice(movie)
-    genre, movie_list = random.choice(list(random_movies.items()))
-    selected_movie = random.choice(movie_list)
+
+random_movies = random.choice(movie)
+genre, movie_list = random.choice(list(random_movies.items()))
+selected_movie = random.choice(movie_list)
 
 user_data[name]["suggested_movie"].append({
     "movie": selected_movie,
@@ -111,4 +109,4 @@ with open(User_history, "w") as userfile:
 print("-------------------------------")
 
 print(f"Thank you {name}, for using MovieMatch!. Hope you enjoy your movie " +
-      "suggestion and your history has been been saved. Hope to see you again.")
+      "suggestion and your history has been saved. Hope to see you again.")
