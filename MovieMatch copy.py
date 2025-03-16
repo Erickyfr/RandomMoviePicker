@@ -1,5 +1,4 @@
 import random
-import sys
 import os
 import json
 
@@ -60,19 +59,22 @@ def UserAddMovie(movie, name):
         genre_check = input("please enter the genre you want to add a movie to: ")
     
         if genre_check.title() in movie[0]:
-            print(f"{name}, you have selected the {genre_check.title()} genre.")
+            print(f"{name}, you have selected the {genre_check} genre.")
             print(f"{name}, Just to let you know, be curious of spelling and capitalization, for the movie you are adding.")
             new_movie = input(f"Enter the name of the movie you want to add in {genre_check}, {name}: ").title()
          #checking for duplicates
             if new_movie in movie[0][genre_check.title()]:  
                 print(f"{name}, Looks like {new_movie} is already in the {genre_check.title()} genre. Try again.")
+                return None, None
             else:
                 movie[0][genre_check.title()].append(new_movie)
                 print(f"{new_movie} has been added to the {genre_check.title()} genre.")
+                return genre_check, new_movie
                 
         else:
             print("Looks like we do not have the genre you are looking for")
-    return None, None
+    else:
+        return None, None
         
 
 def main():
@@ -84,8 +86,6 @@ def main():
     
     user_data[name]["suggested_movie"].append({"movie": selected_movie, "genre": genre})
     
-    print(f"{name}, your movie suggestion is: {selected_movie} in the {genre} genre.")
-    
     genre_check, new_movie = UserAddMovie(movie_data, name)
     if new_movie:
         user_data[name]["added_movie"].append({"movie": new_movie, "genre": genre_check})
@@ -93,5 +93,9 @@ def main():
     
     SaveUserHistory(User_history, user_data)
     
+    print(f"{name}, your movie suggestion is: {selected_movie} in the {genre} genre. Hope you enjoy it!!")
     print(f"Thank you {name} for using MovieMatch! Your history has been saved.")
     
+
+if __name__ == "__main__":
+    main()

@@ -20,6 +20,18 @@
             {
                 "movie": "Dumb and Dumber",
                 "genre": "Comedy"
+            },
+            {
+                "movie": "The Hangover",
+                "genre": "Comedy"
+            },
+            {
+                "movie": "Forrest Gump",
+                "genre": "Drama"
+            },
+            {
+                "movie": "Interstellar",
+                "genre": "Sci-Fi"
             }
         ],
         "added_movie": [
