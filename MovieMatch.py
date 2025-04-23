@@ -5,8 +5,6 @@ import json
 
 Movie_history = "MovieList.json"
 User_history = "UserHistory.json"
-
-
 # Dictionary inside a list
 movies = [
     {"Action": ["John Wick","Mad Max: Fury Road", "The Dark Knight", "Die Hard", "Gladiator"],
@@ -26,6 +24,7 @@ if os.path.exists(Movie_history):
 else:
     movie = movies
 # Saves the hardcoded movie data to the JSON file if it doesn't exist.
+    
 
 # Load user data from the JSON file if it exists
 if os.path.exists(User_history):
@@ -109,4 +108,4 @@ with open(User_history, "w") as userfile:
 print("-------------------------------")
 
 print(f"Thank you {name}, for using MovieMatch!. Hope you enjoy your movie " +
-      "suggestion and your history has been saved. Hope to see you again.")
+      "suggestion and your history has been been saved. Hope to see you again.")

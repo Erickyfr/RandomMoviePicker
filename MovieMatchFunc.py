@@ -102,8 +102,8 @@ def main():
     SaveUserHistory(User_history, user_data)
     
     
-    print(f"{name}, your movie suggestion is: {selected_movie} in the {genre} genre. Hope you enjoy it!!")
-    print(f"Thank you {name} for using MovieMatch! Your history has been saved. \n")
+    print(f"\n {name}, your movie suggestion is: {selected_movie} in the {genre} genre. Hope you enjoy it!!")
+    print(f"\n Thank you {name} for using MovieMatch! Your history has been saved. \n")
     
 
 if __name__ == "__main__":

@@ -22,32 +22,12 @@
                 "genre": "Comedy"
             },
             {
-                "movie": "The Hangover",
-                "genre": "Comedy"
-            },
-            {
-                "movie": "Forrest Gump",
-                "genre": "Drama"
-            },
-            {
-                "movie": "Interstellar",
+                "movie": "Inception",
                 "genre": "Sci-Fi"
             },
             {
-                "movie": "No Country for Old Men",
-                "genre": "Thriller"
-            },
-            {
-                "movie": "Step Brothers",
-                "genre": "Comedy"
-            },
-            {
-                "movie": "The BeeKeeper",
-                "genre": "Action"
-            },
-            {
-                "movie": "Gone Girl",
-                "genre": "Thriller"
+                "movie": "Hereditary",
+                "genre": "Horror"
             }
         ],
         "added_movie": [
@@ -58,10 +38,6 @@
             {
                 "movie": "The Beekeeper",
                 "genre": "Action"
-            },
-            {
-                "movie": "Avengers: Endgame",
-                "genre": "action"
             }
         ]
     },
@@ -95,58 +71,5 @@
             }
         ],
         "added_movie": []
-    },
-    "John": {
-        "suggested_movie": [
-            {
-                "movie": "Spirited Away",
-                "genre": "Animation"
-            }
-        ],
-        "added_movie": []
-    },
-    "Alex": {
-        "suggested_movie": [
-            {
-                "movie": "The Matrix",
-                "genre": "Sci-Fi"
-            },
-            {
-                "movie": "Zodiac",
-                "genre": "Thriller"
-            },
-            {
-                "movie": "The Dark Knight",
-                "genre": "Action"
-            },
-            {
-                "movie": "John Wick",
-                "genre": "Action"
-            }
-        ],
-        "added_movie": [
-            {
-                "movie": "Vacation Friends",
-                "genre": "comedy"
-            }
-        ]
-    },
-    "Basil": {
-        "suggested_movie": [
-            {
-                "movie": "It Follows",
-                "genre": "Horror"
-            },
-            {
-                "movie": "Blade Runner 2049",
-                "genre": "Sci-Fi"
-            }
-        ],
-        "added_movie": [
-            {
-                "movie": "Modern Family",
-                "genre": "Comedy"
-            }
-        ]
     }
 }
