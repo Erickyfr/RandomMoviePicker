@@ -1,12 +1,12 @@
 # MovieMatch
 ## Overview
-MovieMatch is a Python-based movie recommendation system that suggests random movies from various genres and allows users to contribute to the movie database. The application maintains user histories and movie lists in JSON files for session persistence.
+MovieMatch is a Python-based movie recommendation system that suggests random movies from various genres and allows users to contribute to the movie database. The application maintains user histories and movie lists in SQLite for session persistence.
 
 ## Features
 - **Random Movie Suggestions**: Recommends a random movie from a curated list of genres.
 - **User History Tracking**: Remembers previous recommendations for returning users.
 - **Movie Database Expansion**: Allows users to add new movies to existing genres.
-- **Data Persistence**: Saves all data in JSON files for future sessions.
+- **Data Persistence**: Saves all data in SQLite for future sessions.
 - **Genre Categories**: Includes 7 popular movie genres with 5 movies each.
 
 ## Available Genres
@@ -20,7 +20,7 @@ MovieMatch is a Python-based movie recommendation system that suggests random mo
 
 ## Installation
 - Ensure you have Python 3.x installed on your system.
-- No additional dependencies are required beyond Python's standard library.
+- No additional dependencies beyond Python's standard library are required.
 
 ## Usage
 - Run the script using the command:
