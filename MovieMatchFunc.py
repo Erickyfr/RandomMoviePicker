@@ -3,7 +3,6 @@ from movie_utils import get_all_movies, randomize_movie, load_user_history, save
 def main():
     
     conn, cur = build_database()
-    '''initialize_movies()'''
 
     movie_data = get_all_movies(cur)
     
@@ -35,26 +34,7 @@ def main():
     
     conn.close()
 
-    '''CheckUserHistory(name, user_data)
-    genre, selected_movie = RandomizeMovie(movie_data)
-    
-    #saving user history
-    user_data[name]["suggested_movie"].append({"movie": selected_movie, "genre": genre})
-    
-    #Calling a function
-    genre_check, new_movie = UserAddMovie(movie_data, name)
-    
-    # Save newly added movie to both user history and main database    
-    if new_movie:
-        user_data[name]["added_movie"].append({"movie": new_movie, "genre": genre_check})
-        SaveMovieHistory(Movie_history, movie_data)
-    
-    SaveUserHistory(User_history, user_data)
-    
-    
-    print(f"\n {name}, your movie suggestion is: {selected_movie} in the {genre} genre. Hope you enjoy it!!")
-    print(f"\n Thank you {name} for using MovieMatch! Your history has been saved. \n")'''
-    
-
 if __name__ == "__main__":
     main()
+    
+'''initialize_movies()'''
