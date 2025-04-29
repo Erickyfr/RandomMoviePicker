@@ -19,22 +19,105 @@ class MovieMatchApp:
         #self.new_movie = tk.StringVar()
         
         self.start()
+        #self.show_menu()
     
     def start(self):
-        tk.Label(self.root, text="Welcome to MovieMatch !!!", font=("Algerian", 21)).pack(pady=20)
-        tk.Label(self.root, text="Enter your name:").pack(pady=4)
-        tk.Entry(self.root, textvariable=self.username).pack(pady=3)
-        tk.Button(self.root, text="Submit",font=("Arial", 12, "bold"), command= self.submit_name).pack(pady=7)
+        self.head_label = tk.Label(self.root, text="Welcome to MovieMatch !!!", font=("Algerian", 21))
+        self.head_label.pack(pady=20)
+        self.name_label = tk.Label(self.root, text="Enter your name:", font=("Times New Roman", 12, "bold"))
+        self.name_label.pack(pady=4)
+        self.name_entry = tk.Entry(self.root, textvariable=self.username)
+        self.name_entry.pack(pady=3)
+        self.btn_label = tk.Button(self.root, text="Submit",font=("Arial", 12), command= self.submit_name)
+        self.btn_label.pack(pady=7)
+        #self.show_menu()
         
     def submit_name(self):
         name = self.username.get()
         if not name:
-            messagebox.showerror("\b Error, Name missing", "Please enter your name.")
+            messagebox.showerror("❌ Error", "Please enter your name.")
             return
         else:
             messagebox.showinfo("Welcome", f"{name}, Welcome to MovieMatch!")
-
+            
+        #self.head_label.destroy()
+        self.name_label.destroy()
+        self.name_entry.destroy()
+        self.btn_label.destroy()
+        
+        self.show_menu()
     
+    def show_menu(self):
+        greeting = f"Hello {self.username.get()}, Welcome what would you like to do?"
+        
+        self.menu_label = tk.Label(self.root, text=greeting, font=("Algerian", 15))
+        self.menu_label.pack(pady=20)
+        
+        self.recommend_movie_btn = tk.Button(self.root, text= "Movie Recommendation", font=("Sans Serif", 12), command = self.suggest_movie)
+        self.recommend_movie_btn.pack(pady=10)
+        
+        self.add_movie_btn = tk.Button(self.root, text="Add Movie", font= ("Sans Serif", 12), command = self.add_movie)
+        self.add_movie_btn.pack(pady=10)
+        
+        self.show_user_history_btn = tk.Button(self.root, text= "Show User History 📜", font=("Sans Serif", 12), command = self.show_history)
+        self.show_user_history_btn.pack(pady=10)
+        
+        self.exit_btn = tk.Button(self.root, text="Exit", font=("Sans Serif", 10), command = self.exit_app)
+        self.exit_btn.pack(pady=10)
+
+    def suggest_movie(self):
+        #messagebox.showinfo("Recommendation", "Feature coming soon!")
+        genre, movie_title = randomize_movie(self.cur)
+        
+        if movie_title:
+            messagebox.showinfo("Movie Recommendation 🥳", f"Here is the movie recommended for you to watch: --{movie_title}-- in the --{genre}-- genre")
+            save_user_history(self.username.get(), "suggested", genre, movie_title, self.conn, self.cur)
+        else:
+            messagebox.showerror("No Movies", "No Movies available in the database.")
+        
+        #self.recommend_movie_btn.destroy()
+        
+    def add_movie(self):
+        genre_check = simpledialog.askstring("Genre", "Please enter the genre you want to add a movie to:")
+        if not genre_check:
+            return
+        
+        genre_check = genre_check.strip().title()
+        
+        self.cur.execute("SELECT DISTINCT genre FROM MOVIE_HISTORY")
+        existing_genres = {row[0] for row in self.cur.fetchall()}
+        
+        if genre_check not in existing_genres:
+            messagebox.showerror("Genre Error ‼️", f"Sorry {self.username.get()}, the genre --{genre_check}-- does not exist in our database")
+            return
+        
+        new_movie = simpledialog.askstring("Movie", "Enter the movie name:")
+        if not new_movie:
+            return
+        new_movie = new_movie.strip().title()
+        
+        self.cur.execute("SELECT 1 FROM MOVIE_HISTORY WHERE genre = ? AND movie_title = ?", (genre_check, new_movie))
+        if self.cur.fetchone():
+            messagebox.showerror("ALready Exists ⁉️", f"{new_movie} already exists in {genre_check} genre.")
+            return
+        
+        self.cur.execute("INSERT INTO MOVIE_HISTORY(genre, movie_title) VALUES (?, ?)", (genre_check, new_movie))
+        self.conn.commit()
+        
+        save_user_history(self.username.get(), "added", genre_check, new_movie, self.conn, self.cur)
+        
+        messagebox.showinfo("Movie Added 🎉", f"{new_movie} has been added to {genre_check} genre")
+        
+        #genre_check = UserAddMovie(self.username.get(), self.conn, self.cur)
+        #self.add_movie_btn.destroy()
+      
+    def show_history(self):
+        load_user_history(self.username.get(), self.cur)
+        
+    def exit_app(self):
+        self.conn.close()
+        self.root.destroy()
+
     '''def submit_name(self):
         
         tk.Label(self.root, text="Welcome to MovieMatch !!!", font=("Algerian", 21)).pack(pady=20)
