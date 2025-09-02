@@ -25,7 +25,7 @@ MovieMatch is a Python-based movie recommendation system that suggests random mo
 ## Usage
 - Run the script using the command:
   
-`python main.py`
+`python MovieMatch.py`
 - Follow the on-screen prompts:
     - Enter your name when prompted.
     - The system will greet you and provide a movie recommendation.

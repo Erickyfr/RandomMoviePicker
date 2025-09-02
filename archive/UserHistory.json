@@ -20,14 +20,6 @@
             {
                 "movie": "Dumb and Dumber",
                 "genre": "Comedy"
-            },
-            {
-                "movie": "Inception",
-                "genre": "Sci-Fi"
-            },
-            {
-                "movie": "Hereditary",
-                "genre": "Horror"
             }
         ],
         "added_movie": [
