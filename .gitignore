@@ -1,0 +1,33 @@
+# --------------------
+# Python cache/junk
+# --------------------
+__pycache__/
+*.py[cod]
+*$py.class
+
+# --------------------
+# Virtual environments
+# --------------------
+venv/
+.venv/
+
+# --------------------
+# Databases (optional)
+*.db
+
+# --------------------
+# Logs
+*.log
+
+# --------------------
+# Environment variables / secrets
+.env
+.env.*
+
+# --------------------
+# VS Code settings
+.vscode/
+
+# --------------------
+# Other IDEs/editors (optional)
+.idea/
